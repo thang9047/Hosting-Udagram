@@ -13,7 +13,7 @@
     "prod": "npx tsc ; node ./www/server.js",
     "aws-eb": "chmod +x bin/aws-eb.sh && bin/aws-eb.sh",
     "clean": "rd -r www/",
-    "deploy": "eb list ; eb use udagram-api-dev ; eb deploy",
+    "deploy": "chmod +x bin/deploy.sh && bin/deploy.sh",
     "build": "npm run clean ; tsc ; copy -r src/config www/config ; copy .npmrc www/.npmrc ; copy package.json www/package.json ; cd www ; zip -r Archive.zip . * -x ./node_modules ; cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
