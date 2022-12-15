@@ -38,9 +38,9 @@ A more in depth documentation into the application.
 
 ### AWS Cloud Setup
 
-- RDS - Database Host: project.cqg1cl7skyby.us-east-1.rds.amazonaws.com
+- RDS - Database Host: database-3.cjyqjeiynmkt.us-east-1.rds.amazonaws.com
 - RDS - Database Port: 5432
-- RDS - Database Name: project
+- RDS - Database Name: postgres
 
 - S3 Endpoint - Frontend: http://thangdd12-udagram.s3-website-us-east-1.amazonaws.com/home
 
@@ -58,7 +58,7 @@ Setup the following variables in the .env file or in the cloud environments:
 - POSTGRES_PASSWORD   = mypassword
 - URL                 = http://thangdd12-udagram.s3-website-us-east-1.amazonaws.com/home
 - JWT_SECRET          = 5ae8adc9731627905ebf0905dbe4a114ba7d8354ae1796772dfa523a2142761b78d48cbfcd98000bb94fbdbd8147f30de6b3484c3a060d389068204df6a50630
-- AWS_REGION          = <us-east-1>
+- AWS_REGION          = us-east-1
 - AWS_PROFILE         = default
 - AWS_BUCKET          = thangdd12-udagram
 
@@ -91,7 +91,6 @@ The order of the run jobs:
   - Deploy the site to AWS S3.
 - Backend:
   - Install dependencies.
-  - Change The main entry point in package.json.
   - Transpile the typescript/ build the app.
   - Install AWS Elastic Beanstalk CLI.
   - Deploy the app to AWS Elastic Beanstalk.

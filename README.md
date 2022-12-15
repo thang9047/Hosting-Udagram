@@ -43,7 +43,7 @@ The project can run but is missing some information to connect to the database a
 
 - Detailed Documentation is provided in `./Docs/README.md`
 - Screenshots of the AWS configurations and the CircleCI are provided in `./Docs/Screenshots/`
-- 
+- Architecture Diagrams of the AWS and the Pipeline are provided in `./Docs/Architecture Diagrams/`
 ## CopyRights
 - The project code was provided by Udacity for the purpose of hosting a fullstack application into AWS.
 - AWS Architecture Icons `https://aws.amazon.com/architecture/icons/`
