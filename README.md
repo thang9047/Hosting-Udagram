@@ -41,7 +41,9 @@ The project can run but is missing some information to connect to the database a
 
 ## Documentation
 
+- Detailed Documentation is provided in `./Docs/README.md`
 - Screenshots of the AWS configurations and the CircleCI are provided in `./Docs/Screenshots/`
+- 
 ## CopyRights
 - The project code was provided by Udacity for the purpose of hosting a fullstack application into AWS.
 - AWS Architecture Icons `https://aws.amazon.com/architecture/icons/`
