@@ -7,9 +7,10 @@ orbs:
 jobs:
   build-and-deploy:
     docker:
-      - image: 'cimg/base:stable'
+      - image: "cimg/node:16.0"
     steps:
       - node/install
+        node-version: '16.0'
       - checkout
       - aws-cli/setup
 # Installing the frontend dependencies
