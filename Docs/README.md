@@ -20,11 +20,11 @@ A more in depth documentation into the application.
 ### Dependencies
 
 ```
-- Node v14.15.1 (LTS) or more recent. While older versions can work it is advisable to keep node to latest LTS version
+- Node v14.15.1 (LTS) or more recent
 
-- npm 6.14.8 (LTS) or more recent, Yarn can work but was not tested for this project
+- npm 6.14.8 (LTS) or more recent
 
-- AWS CLI v2, v1 can work but was not tested for this project
+- AWS CLI v2
 
 - AWS EB CLI
 
@@ -42,25 +42,28 @@ A more in depth documentation into the application.
 - RDS - Database Port: 5432
 - RDS - Database Name: project
 
-- S3 Endpoint - Frontend: http://myprojectbucketz.s3-website-us-east-1.amazonaws.com/
+- S3 Endpoint - Frontend: http://thangdd12-udagram.s3-website-us-east-1.amazonaws.com/home
 
-- Elastic Beanstalk URL - Backend: http://myprojectv3-env.eba-futr4mze.us-east-1.elasticbeanstalk.com/
+- Elastic Beanstalk URL - Backend: http://udagram-api-dev.eba-itq5cieq.us-east-1.elasticbeanstalk.com/
 
 ## Environment Variables
 
 Setup the following variables in the .env file or in the cloud environments:
 ```
 - PORT                = 8080
-- POSTGRES_HOST       = <Database_IP_Address>
-- POSTGRES_PORT       = <Database_Port>
-- POSTGRES_DB         = <Database_Name>
-- POSTGRES_USERNAME   = <Database_Username>
-- POSTGRES_PASSWORD   = <Database_Password>
-- URL                 = <Url>
-- JWT_SECRET          = <Any_PassPhrase>
+- POSTGRES_HOST       = database-3.cjyqjeiynmkt.us-east-1.rds.amazonaws.com
+- POSTGRES_PORT       = 5432
+- POSTGRES_DB         = postgres
+- POSTGRES_USERNAME   = postgres
+- POSTGRES_PASSWORD   = mypassword
+- URL                 = http://thangdd12-udagram.s3-website-us-east-1.amazonaws.com/home
+- JWT_SECRET          = 5ae8adc9731627905ebf0905dbe4a114ba7d8354ae1796772dfa523a2142761b78d48cbfcd98000bb94fbdbd8147f30de6b3484c3a060d389068204df6a50630
 - AWS_REGION          = <us-east-1>
-- AWS_PROFILE         = <Profile>
-- AWS_BUCKET          = <Bucket_Name>
+- AWS_PROFILE         = default
+- AWS_BUCKET          = thangdd12-udagram
+
+AWS_ACCESS_KEY_ID = "AKIA2UX5GF4YT2XD6FFX"
+AWS_SECRET_ACCESS_KEY = "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"
 ```
 
 ## Pipeline
@@ -69,11 +72,9 @@ From the root of the project:
 - `npm run frontend:install`    - To install frontend dependencies.
 - `npm run frontend:build`      - To build the Angular/Frontend.
 - `npm run frontend:deploy`     - To deploy the project to S3 using `./udagram-frontend/bin/deploy.sh` deploy script.
-- `npm run backend:install`     - To install backend dependencies.
-- `npm run backend:change-main` - To change the main entry point in the package.json from `src/server.js` to `server.js` using `./udagram-api/bin/edit-main-entry.sh` with the help of jq and sponge.
-- `npm run backend:build`       - To transpile the Typescript/Backend.
-- `npm run backend:aws-eb`      - To Install AWS-EB using `./udagram-api/bin/aws-eb.sh` install script.
-- `npm run backend:deploy`      - To deploy the project to EB using `./udagram-api/bin/deploy.sh` deploy script.
+- `npm run api:install`     - To install backend dependencies.
+- `npm run api:build`       - To transpile the Typescript/Backend.
+- `npm run api:deploy`      - To deploy the project to EB using `./udagram-api/bin/deploy.sh` deploy script.
 ## CircleCi
 
 The order of the run jobs:
@@ -99,7 +100,7 @@ The order of the run jobs:
 
 This project contains two different test suite: unit tests and End-To-End tests(e2e). Follow these steps to run the tests.
 
-1. `cd udagram-frontend`
+1. `cd udagram/udagram-frontend`
 2. `npm run test`
 3. `npm run e2e`
 
